@@ -337,7 +337,6 @@ if (isset($_POST['abecedario'])) {
         <p>Primer número: <input type="number" name="number1" /></p>
         <p>Segundo número: <input type="number" name="number2" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 2</h1>
@@ -347,7 +346,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer2" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 3</h1>
@@ -357,7 +355,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce una letra: <input type="text" name="vocal" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 4: Comprueba si es múltiplo de 3 y 5</h1>
@@ -367,7 +364,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer4" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 5: Comprueba el mayor de tres números</h1>
@@ -379,7 +375,6 @@ if (isset($_POST['abecedario'])) {
         <p>Introduce el segundo número: <input type="number" name="numeroEjer5_2" /></p>
         <p>Introduce el tercer número: <input type="number" name="numeroEjer5_3" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 6: Cuenta restaurante</h1>
@@ -392,7 +387,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce el precio de la cuenta: <input type="number" name="restaurante" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 7: Digito a letras</h1>
@@ -402,7 +396,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número (0-9): <input type="number" name="numeroEjer7" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 8: Pares del rango introducido</h1>
@@ -415,7 +408,6 @@ if (isset($_POST['abecedario'])) {
         <p>Introduce el número inicial: <input type="number" name="inicial" /></p>
         <p>Introduce el número final: <input type="number" name="final" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 9: Multiplos de 5 hasta el número introducido</h1>
@@ -427,7 +419,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer9" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 10: Contador Digitos</h1>
@@ -440,7 +431,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce el precio de la cuenta: <input type="number" name="numeroEjer10" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 11: Número inverso</h1>
@@ -450,7 +440,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer11" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 12: Cubo perfecto</h1>
@@ -460,7 +449,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer12" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 13: Suma pares e Impares</h1>
@@ -473,7 +461,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer13" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 14: Multiplos en el rango</h1>
@@ -494,7 +481,6 @@ if (isset($_POST['abecedario'])) {
     <form action="" method="post">
         <p>Introduce un número: <input type="number" name="numeroEjer15" /></p>
         <p><input type="submit" /></p>
-
     </form>
 
     <h1>Ejercicio 16: Abecedario</h1>
@@ -505,7 +491,6 @@ if (isset($_POST['abecedario'])) {
     <?php } ?>
     <form action="" method="post">
         <p>Pulsa para ver el abecedario: <input type="submit" name="abecedario" /></p>
-
     </form>
 
 </body>
