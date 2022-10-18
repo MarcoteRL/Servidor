@@ -325,6 +325,29 @@ if (isset($_POST['abecedario'])) {
     $resultadoEjer16 = mostrarAlfabeto();
 }
 
+
+// 17. Crear un login
+
+function login($username, $password)
+{
+    $array_users = array("andres" => "12345", "pedro" => "3456");
+    foreach ($array_users as $key => $value) {
+        if ($key == $username) {
+            if ($value == $password) {
+                return "Login correcto";
+            } else {
+                return "Contraseña incorrecta";
+            }
+        } else {
+            return "El usuario no existe";
+        }
+    }
+}
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $resultadoEjer17 = login($_POST['username'], $_POST['password']);
+}
+
 ?>
 <html>
 
@@ -491,6 +514,16 @@ if (isset($_POST['abecedario'])) {
     <?php } ?>
     <form action="" method="post">
         <p>Pulsa para ver el abecedario: <input type="submit" name="abecedario" /></p>
+    </form>
+
+    <h1>Ejercicio 17: Login</h1>
+    <?php if (isset($resultadoEjer17)) { ?>
+        <h2> Resultado: <?php echo $resultadoEjer17 ?></h2>
+    <?php } ?>
+    <form action="" method="post">
+        <p>Usuario: <input type="text" name="username" placeholder="Correo o teléfono" /></p>
+        <p>Contraseña: <input type="text" name="password" /></p>
+        <p><input type="submit" /></p>
     </form>
 
 </body>
