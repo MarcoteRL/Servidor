@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+html {
+    background:
+        linear-gradient(rgba(19, 95, 235, 0.6), rgba(155, 89, 182, 0.6));
+}
+
+input[type=submit] {
+    min-width: 75px;
+    min-height: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
+input[type=submit]::before {
+    content: '';
+    border-radius: 250px;
+    min-width: calc(75px + 3px);
+    min-height: calc(15px + 3px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0, 255, 203, .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+input[type=submit]:hover::before, input[type=submit]:focus::before {
+    opacity: 1;
+}
+
+input[type=submit]::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+input[type=submit]:hover::after, input[type=submit]:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px black;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(43, 116, 64);
+}
+

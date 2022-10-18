@@ -351,8 +351,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 ?>
 <html>
 
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <h1>Ejercicio 1</h1>
+    <h1>Ejercicio 1. Devuelve el número mayor</h1>
     <?php if (isset($result)) { ?>
         <h2> Resultado: <?php echo $result ?></h2>
     <?php } ?>
@@ -362,7 +366,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <p><input type="submit" /></p>
     </form>
 
-    <h1>Ejercicio 2</h1>
+    <h1>Ejercicio 2. Devuelve si el número es negativo, positivo o neutro</h1>
     <?php if (isset($resultadoEjer2)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer2 ?></h2>
     <?php } ?>
@@ -371,7 +375,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <p><input type="submit" /></p>
     </form>
 
-    <h1>Ejercicio 3</h1>
+    <h1>Ejercicio 3. Muestra si es una vocal o no.</h1>
     <?php if (isset($resultadoEjer3)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer3 ?></h2>
     <?php } ?>
