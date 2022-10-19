@@ -5,6 +5,14 @@ html {
         linear-gradient(rgba(19, 95, 235, 0.6), rgba(155, 89, 182, 0.6));
 }
 
+body {
+    margin: 30px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
 input[type=submit] {
     min-width: 75px;
     min-height: 15px;
@@ -83,13 +91,13 @@ input[type=submit]:hover::after, input[type=submit]:focus::after {
     }
 }
 
-h1{
+h1 {
     font-family: 'Roboto', sans-serif;
     color: rgb(255, 255, 255);
     -webkit-text-stroke: 1px black;
 }
 
-h2{
+h2 {
     font-family: 'Roboto', sans-serif;
     color: rgb(43, 116, 64);
 }

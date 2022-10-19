@@ -18,6 +18,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 2. Devuelve si el número es negativo, positivo o neutro</h1>
     <?php if (isset($resultadoEjer2)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer2 ?></h2>
@@ -26,6 +28,8 @@
         <p>Introduce un número: <input type="number" name="numeroEjer2" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 3. Muestra si es una vocal o no.</h1>
     <?php if (isset($resultadoEjer3)) { ?>
@@ -36,6 +40,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 4: Comprueba si es múltiplo de 3 y 5</h1>
     <?php if (isset($resultadoEjer4)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer4 ?></h2>
@@ -44,6 +50,8 @@
         <p>Introduce un número: <input type="number" name="numeroEjer4" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 5: Comprueba el mayor de tres números</h1>
     <?php if (isset($resultadoEjer5)) { ?>
@@ -55,6 +63,8 @@
         <p>Introduce el tercer número: <input type="number" name="numeroEjer5_3" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 6: Cuenta restaurante</h1>
     <?php if (isset($cuenta)) { ?>
@@ -68,6 +78,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 7: Digito a letras</h1>
     <?php if (isset($resultadoEjer7)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer7 ?></h2>
@@ -76,6 +88,8 @@
         <p>Introduce un número (0-9): <input type="number" name="numeroEjer7" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 8: Pares del rango introducido</h1>
     <?php if (isset($resultadoEjer8)) { ?>
@@ -89,6 +103,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 9: Multiplos de 5 hasta el número introducido</h1>
     <?php if (isset($resultadoEjer9)) { ?>
         <h2> Resultado: <?php foreach ($resultadoEjer9 as $value) {
@@ -99,6 +115,8 @@
         <p>Introduce un número: <input type="number" name="numeroEjer9" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 10: Contador Digitos</h1>
     <?php if (isset($resultadoEjer10)) { ?>
@@ -112,6 +130,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 11: Número inverso</h1>
     <?php if (isset($resultadoEjer11)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer11 ?></h2>
@@ -121,6 +141,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 12: Cubo perfecto</h1>
     <?php if (isset($resultadoEjer12)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer12 ?></h2>
@@ -129,6 +151,8 @@
         <p>Introduce un número: <input type="number" name="numeroEjer12" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 13: Suma pares e Impares</h1>
     <?php if (isset($resultadoEjer13)) { ?>
@@ -142,6 +166,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 14: Multiplos en el rango</h1>
     <?php if (isset($resultadoEjer14)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer14 ?> múltiplos.</h2>
@@ -153,6 +179,8 @@
         <p><input type="submit" /></p>
     </form>
 
+    <hr>
+
     <h1>Ejercicio 15. Verifica si es primo</h1>
     <?php if (isset($resultadoEjer15)) { ?>
         <h2> Resultado: <?php echo $resultadoEjer15 ?></h2>
@@ -161,6 +189,8 @@
         <p>Introduce un número: <input type="number" name="numeroEjer15" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 16: Abecedario</h1>
     <?php if (isset($resultadoEjer16)) { ?>
@@ -171,6 +201,8 @@
     <form action="" method="post">
         <p>Pulsa para ver el abecedario: <input type="submit" name="abecedario" /></p>
     </form>
+
+    <hr>
 
     <h1>Ejercicio 17: Login</h1>
     <?php if (isset($resultadoEjer17)) { ?>
