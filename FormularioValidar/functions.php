@@ -24,7 +24,7 @@ function validar($nombre, $apellidos, $correo, $telefono)
         } else {
             echo "<h2 class='valid'>Correcto</h2>";
         }
-    } catch (\Exception $e) {
+    } catch (Exception $e) {
         echo 'Excepción capturada: ',  $e->getMessage(), "\n";
     }
 }
