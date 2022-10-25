@@ -213,6 +213,14 @@
         <p>Contraseña: <input type="text" name="password" /></p>
         <p><input type="submit" /></p>
     </form>
+
+    <hr>
+
+    <h1>Ejercicio 18: Validar Formulario</h1>
+    <a href="../FormularioValidar/index.php"><button>Formulario</button></a>
+
+    <hr>
+
 </body>
 
 </html>

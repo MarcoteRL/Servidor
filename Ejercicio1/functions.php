@@ -348,4 +348,3 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $resultadoEjer17 = login($_POST['username'], $_POST['password']);
 }
 
-?>
