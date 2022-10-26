@@ -348,3 +348,114 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $resultadoEjer17 = login($_POST['username'], $_POST['password']);
 }
 
+/**
+ * 20. Crea una web que reciba una palabra y determine si es palíndroma.
+ *  Una palabra palíndroma es aquella que se lee del derecho y del revés de la misma manera
+ */
+
+function esPalindroma($palabra)
+{
+    $reversed = "";
+    for ($i = strlen($palabra) - 1; $i >= 0; $i--) {
+        $reversed .= $palabra[$i];
+    }
+    if ($reversed == $palabra) {
+        return "Es palíndroma";
+    } else {
+        return "No es palíndroma";
+    }
+}
+
+if (isset($_POST['palabraEjer20'])) {
+    $resultadoEjer20 = esPalindroma($_POST['palabraEjer20']);
+}
+
+/**
+ * 21. Crea una web que reciba un DNI y compruebe que lo que se ha introducido es correcto.
+ *     a. MOD: modifica el ejercicio para que al poner el DNI, se ponga directamente la letra.
+ */
+
+function validaDNI($DNI)
+{
+    $arr = str_split($DNI);
+    $letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    if (count($arr) == 8 && $DNI > 0 && $DNI < 99999999) {
+        $letraDNI = $letras[$DNI % 23];
+        return "El DNI es correcto y la letra es: " . $letraDNI;
+    } else {
+        return "DNI inválido";
+    }
+}
+
+if (isset($_POST['dni'])) {
+    $resultadoEjer21 = validaDNI($_POST['dni']);
+}
+
+/**
+ * 22. Crear una página que reciba una palabra y determine su composición: 
+ * todo mayúsculas, todo minúsculas, mezcla (contar mayúsculas y minúsculas), 
+ * cuantos números si los tiene…
+ */
+
+function contarTodo($palabra)
+{
+    $arr = str_split($palabra);
+    $mayus = 0;
+    $minus = 0;
+    $letras = 0;
+    $numeros = 0;
+    foreach ($arr as $letra) {
+        if (!is_numeric($letra)) {
+            $letras++;
+            if ($letra != " ") {
+                if (strtoupper($letra) === $letra) {
+                    $mayus++;
+                } else {
+                    $minus++;
+                }
+            }
+        } else {
+            $numeros++;
+        }
+    }
+    return "La palabra: " . $palabra . " ,contiene " . $mayus . " mayúsculas, "
+        . $minus . " minúsculas, en total " . $letras . " letras y " . $numeros . " números.";
+}
+
+if (isset($_POST['palabraEjer22'])) {
+    $resultadoEjer22 = contarTodo($_POST['palabraEjer22']);
+}
+
+/**
+ * 23. Crear una expresión regular que valide una fecha en formato XX/XX/XXXX
+ */
+
+function validarFecha($fecha)
+{
+    if (preg_match("/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/", $fecha)) {
+        return "Fecha correcta";
+    } else {
+        return "Fecha inválida";
+    }
+}
+
+if (isset($_POST['fecha'])) {
+    $resultadoEjer23 = validarFecha($_POST['fecha']);
+}
+
+/**
+ * 24. Crear una expresión regular que valide un email
+ */
+
+function validarEmail($email)
+{
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "Email válido";
+    } else {
+        return "Email inválido";
+    }
+}
+
+if (isset($_POST['email'])) {
+    $resultadoEjer24 = validarEmail($_POST['email']);
+}

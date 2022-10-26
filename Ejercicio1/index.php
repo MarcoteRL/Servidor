@@ -221,6 +221,56 @@
 
     <hr>
 
+    <h1>Ejercicio 20: Palabra Palindroma</h1>
+    <?php if (isset($resultadoEjer20)) { ?>
+        <h2> Resultado: <?php echo $resultadoEjer20 ?></h2>
+    <?php } ?>
+    <form action="" method="post">
+        <p>Palabra: <input type="text" name="palabraEjer20" placeholder="Escribe una palabra" /></p>
+        <p><input type="submit" /></p>
+    </form>
+
+    <hr>
+
+    <h1>Ejercicio 21: Valida DNI</h1>
+    <?php if (isset($resultadoEjer21)) { ?>
+        <h2> Resultado: <?php echo $resultadoEjer21 ?></h2>
+    <?php } ?>
+    <form action="" method="post">
+        <p>DNI:  <input type="number" name="dni" placeholder="Introduce el DNI sin letra" /></p>
+        <p><input type="submit" /></p>
+    </form>
+
+    <hr>
+
+    <h1>Ejercicio 22: Contar palabras</h1>
+    <?php if (isset($resultadoEjer22)) { ?>
+        <h2><?php echo $resultadoEjer22 ?></h2>
+    <?php } ?>
+    <form action="" method="post">
+        <p>Palabra:  <input type="text" name="palabraEjer22" placeholder="Introduce una palabra" /></p>
+        <p><input type="submit" /></p>
+    </form>
+
+    <hr>
+
+    <h1>Ejercicio 23: Validar Fecha</h1>
+    <?php if (isset($resultadoEjer23)) { ?>
+        <h2><?php echo $resultadoEjer23 ?></h2>
+    <?php } ?>
+    <form action="" method="post">
+        <p>Fecha:  <input type="text" name="fecha" placeholder="Introduce una fecha (DD/MM/AAAA)" /></p>
+        <p><input type="submit" /></p>
+    </form>
+
+    <h1>Ejercicio 24: Validar Email</h1>
+    <?php if (isset($resultadoEjer24)) { ?>
+        <h2><?php echo $resultadoEjer24 ?></h2>
+    <?php } ?>
+    <form action="" method="post">
+        <p>Email:  <input type="text" name="email" placeholder="Introduce tu correo electrónico" /></p>
+        <p><input type="submit" /></p>
+    </form>
 </body>
 
 </html>
