@@ -1,0 +1,122 @@
+h1 {
+    color: black;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 237, 71),
+        0 0 82px rgb(255, 237, 71),
+        0 0 92px rgb(255, 237, 71),
+        0 0 102px rgb(255, 237, 71),
+        0 0 151px rgb(255, 237, 71);
+    font-size: 4.2rem;
+    animation: flicker 1.5s infinite alternate;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h2 {
+    color: black;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 237, 71),
+        0 0 82px rgb(255, 237, 71),
+        0 0 92px rgb(255, 237, 71),
+        0 0 102px rgb(255, 237, 71),
+        0 0 151px rgb(255, 237, 71);
+    font-size: 2.2rem;
+    animation: flicker 1.5s infinite alternate;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+body {
+    background-color: rgb(44, 43, 43);
+}
+
+.juegoDado {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    align-content: center;
+}
+
+.first-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice {
+    padding: 4px;
+    background-color: rgb(255, 237, 71);
+    width: 104px;
+    height: 104px;
+    border-radius: 10%;
+    margin-right: 10px;
+}
+
+.dot {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+.second-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-face .dot:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+.third-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.third-face .dot:nth-of-type(1) {
+    align-self: flex-end;
+}
+
+.third-face .dot:nth-of-type(2) {
+    align-self: center;
+}
+
+
+.fourth-face, .sixth-face, .fifth-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fourth-face .column, .sixth-face .column, .fifth-face .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fifth-face .column:nth-of-type(2) {
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.active {
+    display: block;
+    visibility: visible;
+}
