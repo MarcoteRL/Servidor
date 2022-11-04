@@ -13,14 +13,14 @@
     <table>
         <?php
         for ($i = 1; $i <= 100; $i++) {
-            if (($i -1) % 10 == 0) {
+            if (($i - 1) % 10 == 0) {
                 echo "<tr>";
                 echo "<td>" . $i . "</td>";
             } else {
                 echo "<td>" . $i . "</td>";
             }
         }
-        ?>  
+        ?>
     </table>
 
 
