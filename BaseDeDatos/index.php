@@ -15,7 +15,6 @@
 
     ?>
 
-
     <form action="" method="post">
         <input type="text" name="id" id="id">
         <input type="text" name="nombre" id="nombre">
