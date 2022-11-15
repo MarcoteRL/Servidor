@@ -1,8 +1,7 @@
 <?php
-$config=array(
-    'DB_HOST'=>'localhost',
-    'DB_USERNAME'=>'Marcote',
-    'DB_PASSWORD'=>12345,
-    'DB_DATABASE'=>'prueba'
-    );
+$connect = mysqli_connect('localhost', 'Marcote', 12345, 'prueba');
+if($connect){
+}else{
+    echo 'va gordo';
+}
 ?>

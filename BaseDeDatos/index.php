@@ -9,19 +9,35 @@
 </head>
 
 <body>
-
-    <?
+    <?php
     include('database.php');
-
+    require_once('C:\wamp64\www\Servidor\BaseDeDatos\config.php');
     ?>
-
-    <form action="" method="post">
-        <input type="text" name="id" id="id">
-        <input type="text" name="nombre" id="nombre">
-        <input type="text" name="apellidos" id="apellidos">
-        <input type="number" name="telefono" id="telefono">
+    <h3>Introducir datos tabla</h3>
+    <form action="database.php" method="post">
+        <input type="text" name="id" id="id" placeholder="Id">
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+        <input type="number" name="telefono" id="telefono" placeholder="Telefono">
         <input type="submit" value="enviar">
     </form>
+
+    <br>
+    <hr>
+
+    <h3>Borrar datos</h3>
+    <form action="database.php" method="post">
+        <input type="number" name="idBorrado" id="idBorrado" placeholder="ID">
+        <input type="submit" value="Borrar">
+    </form>
+
+    <br>
+    <hr>
+    <h3>Mostrar Tabla</h3>
+    <form action="database.php" method="post">
+        <button name="btnMostrar">Pulsar</button>
+    </form>
+
 </body>
 
 </html>

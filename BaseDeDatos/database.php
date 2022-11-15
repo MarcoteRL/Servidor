@@ -1,53 +1,61 @@
 <?php
 
-include('config.php');
+define('__ROOT__', dirname(dirname(__FILE__)));
+require_once('C:\wamp64\www\Servidor\BaseDeDatos\config.php');
 
-$host = $config['DB_HOST'];
-$dbname = $config['DB_DATABASE'];
-$connect = mysqli_connect("mysql:host=$host;dbname=$dbname", $config['DB_USERNAME'], $config['DB_PASSWORD']);
-
-if ($connect === false) {
-    die("ERROR: Could not connect. "
-        . mysqli_connect_error());
-}
-
-// function insertDB($id, $nombre, $apellidos, $telefono)
-// {
-//     return "Entro";
-//     $insert = "insert into prueba('$id', '$nombre', '$apellidos', '$telefono')";
-//     $select = "select * from prueba";
-//     if (mysqli_query($GLOBALS['connect'], $insert)) {
-//         return "New record created successfully";
-//     }
-
-//     $result = mysqli_query($GLOBALS['connect'], $select);
-//     while ($row = mysqli_fetch_array($result)) {
-//         return $row['nombre'];
-//     }
-
-//     mysqli_close($GLOBALS['connect']);
-// };
+//Inserción de datos
 
 if (isset($_POST['id']) && isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['telefono'])) {
-    // $result2 = insertDB($_POST['id'], $_POST['nombre'], $_POST['apellidos'], $_POST['telefono']);
-
+    if ($connect === false) {
+        die("ERROR: Could not connect. "
+            . mysqli_connect_error());
+    }
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
     $telefono = $_POST['telefono'];
-    $sql = "INSERT INTO prueba VALUES($id, $nombre, $apellidos, $telefono)";
+    $sql = "INSERT INTO `prueba`(`Id`, `Nombre`, `Apellidos`, `Telefono`) VALUES ('$id','$nombre','$apellidos','$telefono')";
 
-    if(mysqli_query($connect, $sql)){
-        echo "<h3>data stored in a database successfully."
-            . " Please browse your localhost php my admin"
-            . " to view the updated data</h3>";
+    if (mysqli_query($connect, $sql)) {
+        echo "<h3>Se han guardado los datos correctamente</h3>";
 
-        echo nl2br("\n$id\n $nombre\n "
-            . "$apellidos\n $telefono");
-    } else{
-        echo "ERROR: Hush! Sorry $sql. "
-            . mysqli_error($conn);
+        echo nl2br("\nId: $id\n Nombre: $nombre\n "
+            . "Apellidos: $apellidos\n Telefono: $telefono");
+    } else {
+        echo "ERROR: $sql. "
+            . mysqli_error($connect);
     }
-
     mysqli_close($connect);
+}
+
+/**
+ * Borrado de elemento de tabla SQL
+ */
+
+if (isset($_POST['idBorrado'])) {
+    $id = $_POST['idBorrado'];
+    $delete = "DELETE FROM  prueba WHERE prueba.id = $id";
+    if (mysqli_query($connect, $delete)) {
+        echo "<h3>Se han borrado los datos correctamente</h3>";
+    } else {
+        echo "ERROR: $delete. "
+            . mysqli_error($connect);
+    }
+    mysqli_close($connect);
+}
+
+/**
+ * Mostrar tabla
+ */
+
+if (isset($_POST['btnMostrar'])) {
+    $mostrar = "SELECT * FROM prueba";
+    $result = mysqli_query($connect, $mostrar);
+    while ($row = $result->fetch_assoc()) {
+        echo 'Id:' . $row['Id'] . "<br>";
+        echo "Nombre: " . $row['Nombre'] . "<br>";
+        echo "Apellidos: " . $row['Apellidos'] . "<br>";
+        echo "Telefono: " . $row['Telefono'] . "<br>";
+        echo "<hr>";
+    }
 }
