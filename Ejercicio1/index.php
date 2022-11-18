@@ -55,7 +55,7 @@
 
     <h1>Ejercicio 5: Comprueba el mayor de tres números</h1>
     <?php if (isset($resultadoEjer5)) { ?>
-        <h2> Número más grande: <?php echo $resultadoEjer5 ?></h2>
+        <h2> Número más grande: <?php //echo $resultadoEjer5 ?></h2>
     <?php } ?>
     <form action="" method="post">
         <p>Introduce el primer número: <input type="number" name="numeroEjer5_1" /></p>

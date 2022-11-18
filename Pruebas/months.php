@@ -1,67 +1,65 @@
 <?php
 
+// $mesNumero = $_POST['numero'];
 
+// function meses($mesNumero)
+// {
 
+//     switch ($mesNumero) {
 
-$mesNumero = $_POST['numero'];
+//         case 1:
+//             return "Enero";
+//             break;
 
-function meses($mesNumero){
+//         case 2:
+//             return "Febrero";
+//             break;
 
-    switch ($mesNumero) {
+//         case 3:
+//             return "Marzo";
+//             break;
 
-        case 1:
-            return "Enero";
-            break;
+//         case 4:
+//             return "Abril";
+//             break;
 
-        case 2:
-            return "Febrero";
-            break;
+//         case 5:
+//             return "Mayo";
+//             break;
 
-        case 3:
-            return "Marzo";
-            break;
+//         case 6:
+//             return "Junio";
+//             break;
 
-        case 4:
-            return "Abril";
-            break;
+//         case 7:
+//             return "Julio";
+//             break;
 
-        case 5:
-            return "Mayo";
-            break;
+//         case 8:
+//             return "Agosto";
+//             break;
 
-        case 6:
-            return "Junio";
-            break;
+//         case 9:
+//             return "Septiembre";
+//             break;
 
-        case 7:
-            return "Julio";
-            break;
+//         case 10:
+//             return "Octubre";
+//             break;
 
-        case 8:
-            return "Agosto";
-            break;
+//         case 11:
+//             return "Noviembre";
+//             break;
 
-        case 9:
-            return "Septiembre";
-            break;
+//         case 12:
+//             return "Diciembre";
+//             break;
+//         case 0:
 
-        case 10:
-            return "Octubre";
-            break;
+//         default:
+//             # code...
+//             break;
+//     }
+// }
 
-        case 11:
-            return "Noviembre";
-            break;
-
-        case 12:
-            return "Diciembre";
-            break;
-        case 0:
-
-        default:
-            # code...
-            break;
-    }
-}
-
-meses($mesNumero);
+// meses($mesNumero);
