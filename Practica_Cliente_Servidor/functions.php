@@ -13,5 +13,4 @@ function checkIfExists($user, $connect)
     }
 }
 
-
 ?>

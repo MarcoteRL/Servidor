@@ -1,7 +1,8 @@
 <?php
 
-require_once('C:\wamp64\www\Servidor\Practica_Cliente_Servidor\config.php');
-require_once('C:\wamp64\www\Servidor\Practica_Cliente_Servidor\functions.php');
+define('__ROOT__', dirname(dirname(__FILE__)));
+require_once(__ROOT__.'\Practica_Cliente_Servidor\config.php');
+require_once(__ROOT__.'\Practica_Cliente_Servidor\functions.php');
 
 function checkIfPassMatch($connect, $user, $pass)
 {
@@ -18,7 +19,9 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $password = $_POST['password'];
     if (checkIfExists($user, $connect)) {
         if (checkIfPassMatch($connect, $user, $password)) {
-            echo ("<script>location.href='admin.php'</script>");
+            session_start();
+            $_SESSION['POST'] = $_POST['user'];
+            header("location:admin.php");
         } else {
             header("location:index.php?msg=password_incorrect");
         }
@@ -27,7 +30,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     }
     mysqli_close($connect);
 }
-
 ?>
 
 

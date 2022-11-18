@@ -1,8 +1,8 @@
 <?php
 
 define('__ROOT__', dirname(dirname(__FILE__)));
-require_once('C:\wamp64\www\Servidor\Practica_Cliente_Servidor\config.php');
-require_once('C:\wamp64\www\Servidor\Practica_Cliente_Servidor\functions.php');
+require_once(__ROOT__ . '\Practica_Cliente_Servidor\config.php');
+require_once(__ROOT__ . '\Practica_Cliente_Servidor\functions.php');
 
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $user = $_POST['user'];
@@ -10,11 +10,14 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     if (!checkIfExists($user, $connect)) {
         $sql = "INSERT INTO `profesores`(`mail`, `password`) VALUES ('$user','$password')";
         mysqli_query($connect, $sql);
-        echo ("<script>location.href='index.php'</script>");
-    }else{
-        header("location:register.php?msg=");
+        $create_table = "CREATE TABLE $user (`id` INT PRIMARY KEY AUTO_INCREMENT,
+        `Nombre` varchar(50) NOT NULL, `Apellidos` varchar(50) NOT NULL, `Telefono` INT(9) NOT NULL, `Edad` INT(2) NOT NULL)";
+        $connect->query($create_table);
+        header("location:index.php");
+    } else {
+        header("location:register.php?msg=erro");
     }
-    mysqli_close($connect); 
+    mysqli_close($connect);
 }
 
 ?>
