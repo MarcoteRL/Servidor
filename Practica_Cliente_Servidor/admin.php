@@ -25,31 +25,33 @@
 
         $sql = "SELECT * FROM $user";
         $result = mysqli_query($connect, $sql);
-        $check = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($check) {
-            echo "<br>";
-            echo "<div class='table-wrapper'>";
-            echo "<table class='fl-table'>";
-            echo " <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Telefono</th>
-                    <th>Edad</th>
-                </tr>
-                </thead>";
-            echo "<tbody>";
-            while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary get row on array ..
-                echo "<tr>";
-                foreach ($row as $field => $value) { // I you want you can right this line like this: foreach($row as $value) {
-                    echo "<td>" . $value . "</td>"; // I just did not use "htmlspecialchars()" function. 
+        if ($result) {
+            $check = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if ($check) {
+                echo "<br>";
+                echo "<div class='table-wrapper'>";
+                echo "<table class='fl-table'>";
+                echo " <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Telefono</th>
+                        <th>Edad</th>
+                    </tr>
+                    </thead>";
+                echo "<tbody>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    foreach ($row as $field => $value) {
+                        echo "<td>" . $value . "</td>";
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
+                echo "</tbody>";
+                echo "</table>";
+                echo "</div>";
             }
-            echo "</tbody>";
-            echo "</table>";
-            echo "</div>";
         } else {
             echo "No tienes alumnos!";
         }

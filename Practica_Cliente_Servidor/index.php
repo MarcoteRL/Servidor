@@ -4,15 +4,6 @@ define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'\Practica_Cliente_Servidor\config.php');
 require_once(__ROOT__.'\Practica_Cliente_Servidor\functions.php');
 
-function checkIfPassMatch($connect, $user, $pass)
-{
-    $check = mysqli_query($connect, "SELECT * FROM `profesores` WHERE `mail` like '$user' and `password` like '$pass'");
-    if (mysqli_num_rows($check)) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $user = $_POST['user'];
