@@ -11,6 +11,7 @@ function editarAlumno(contador) {
     }
 }
 
-function removeAlumno(id) {
-    jQuery.get('config.php?value=' + id, false, function (data) { console.log(data)});
-}
+async function removeAlumno(id) {
+    await jQuery.get('config.php?value=' + id, false, function (data) { console.log(data) });
+    location.reload();
+}   

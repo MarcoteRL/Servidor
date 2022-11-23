@@ -26,9 +26,10 @@ $connect->query($create_table_users);
 if (isset($_GET['value'])) {
     session_start();
     $BBDD = $_SESSION['POST'];
-    echo $BBDD;
+    echo "BBDD: " . $BBDD . "\n";
     $id = intval($_GET['value']);
-    $deleteAlumno = "DELETE FROM '$BBDD' WHERE `id` = '$id'";
+    echo "id: " . $id . "\n";
+    $deleteAlumno = "DELETE FROM $BBDD WHERE `id` = $id ";
     if (mysqli_query($connect, $deleteAlumno)) {
         echo "Fino";
     } else {
