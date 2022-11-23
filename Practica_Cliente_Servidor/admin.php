@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Panel de Usuario</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/styleAdmin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="JS/script.js"></script>
 </head>
 
 <body>
@@ -29,36 +34,80 @@
             $check = mysqli_fetch_array($result, MYSQLI_ASSOC);
             if ($check) {
                 echo "<br>";
-                echo "<div class='table-wrapper'>";
-                echo "<table class='fl-table'>";
-                echo " <thead>
+                echo '<div class="row justify-content-center">';
+                echo '<div class="col-auto">';
+                echo "<table id='table' class='table table-hover table-striped table-responsive'>";
+                echo " <thead class='table-dark'>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Telefono</th>
-                        <th>Edad</th>
+                        <th scope='col'>ID</th>
+                        <th scope='col'>Nombre</th>
+                        <th scope='col'>Apellidos</th>
+                        <th scope='col'>Telefono</th>
+                        <th scope='col'>Edad</th>
+                        <th scope='col'>Opciones</th>
                     </tr>
                     </thead>";
                 echo "<tbody>";
-                while ($row = mysqli_fetch_assoc($result)) {
+                $contador = 0;
+                $idAlumno = 0;
+                while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     foreach ($row as $field => $value) {
-                        echo "<td>" . $value . "</td>";
+                        if ($field == 'id') {
+                            $idAlumno = $value;
+                            $contador++;
+                            echo "<td class='$value'>" . $value . "</td>";
+                        } else {
+                            echo "<td id=$contador>" . $value . "</td>";
+                        }
                     }
+                    echo "<td class='col-3 col-sm-6'>" . "<button type='button' class='btn btn-outline-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($contador)'>Editar</button><button type='button' class='btn btn-outline-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                     echo "</tr>";
                 }
                 echo "</tbody>";
                 echo "</table>";
                 echo "</div>";
+                echo "</div>";
+            } else {
+                echo "<p class='mt-4'>No tienes alumnos!</p>";
             }
-        } else {
-            echo "No tienes alumnos!";
         }
         ?>
 
+        <form class="form-inline d-none mt-3" id='formulario_add'>
+            <div class="form-group mb-2 form-check-inline">
+                <label for="inputNombre" class="sr-only">Nombre</label>
+                <input type="text" class="form-control" id="inputNombre" placeholder='Nombre'>
+            </div>
+            <div class="form-group mb-2 form-check-inline">
+                <label for="inputApellidos" class="sr-only">Apellidos</label>
+                <input type="text" class="form-control" id="inputApellidos" placeholder='Apellidos'>
+            </div>
+            <div class="form-group mb-2 form-check-inline">
+                <label for="inputTelefono" class="sr-only">Telefono</label>
+                <input type="text" class="form-control" id="inputTelefono" placeholder='Telefono'>
+            </div>
+            <div class="form-group mx-sm-3 mb-2 form-check-inline">
+                <label for="inputEdad" class="sr-only">Edad</label>
+                <input type="number" class="form-control" id="inputEdad" placeholder="Edad">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Añadir</button>
+        </form>
+
+        <p id="add_alumno" class='mt-3'>Añadir alumno <button class="btn btn-primary" id='add' onclick="javascript:removeClass()">+</button></p>
+
 
     </main>
+
+    <h1>
+        <?php
+        if (isset($_POST['idAlumno'])) {
+
+            echo "hola";
+        }
+        ?>
+
+    </h1>
 </body>
 
 </html>
