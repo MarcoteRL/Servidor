@@ -67,7 +67,7 @@
                         echo "<td id=$idAlumno>" . $value . "</td>";
                     }
                 }
-                echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' class='$idAlumno' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
+                echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='$idAlumno' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
                 echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                 echo "</tr>";
 
@@ -85,7 +85,7 @@
                     echo "<td id=$id>" . $apellidos . "</td>";
                     echo "<td id=$id>" . $telefono . "</td>";
                     echo "<td id=$id>" . $edad . "</td>";
-                    echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' class='$idAlumno' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
+                    echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='$idAlumno' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
                     echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false'  class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                     echo "</tr>";
                 }
