@@ -4,6 +4,8 @@ define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__ . '\Practica_Cliente_Servidor\config.php');
 require_once(__ROOT__ . '\Practica_Cliente_Servidor\functions.php');
 
+//SE AÑADE EL USUARIO A LA TABLA DE PROFESORES Y SE CREA UNA PROPIA
+
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $user = $_POST['user'];
     $password = $_POST['password'];

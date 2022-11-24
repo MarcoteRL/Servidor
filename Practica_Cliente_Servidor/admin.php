@@ -24,10 +24,13 @@
         define('__ROOT__', dirname(dirname(__FILE__)));
         require_once(__ROOT__ . '\Practica_Cliente_Servidor\config.php');
         require_once(__ROOT__ . '\Practica_Cliente_Servidor\functions.php');
+
         if (empty($_SESSION['POST'])) {
             session_start();
         }
         $user = $_SESSION['POST'];
+
+        //MOSTRAMOS LA TABLA RECOGIENDO LOS DATOS DE SQL
         echo "<h2> Bienvenido <span id='nombreUsuario'>$user</span>!</h2>";
         $sql = "SELECT * FROM $user ORDER BY `id`";
         $result = mysqli_query($connect, $sql);
@@ -64,7 +67,7 @@
                         echo "<td id=$idAlumno>" . $value . "</td>";
                     }
                 }
-                echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
+                echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' class='$idAlumno' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
                 echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                 echo "</tr>";
 
@@ -82,8 +85,8 @@
                     echo "<td id=$id>" . $apellidos . "</td>";
                     echo "<td id=$id>" . $telefono . "</td>";
                     echo "<td id=$id>" . $edad . "</td>";
-                    echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
-                    echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
+                    echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' class='$idAlumno' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
+                    echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false'  class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                     echo "</tr>";
                 }
                 echo "</tbody>";
@@ -96,6 +99,7 @@
             }
         }
         ?>
+        <!-- FORMULARIO PARA AÑADIR ALUMNOS -->
         <div class="container justify-content-center">
             <form class="form-inline d-none mt-3" id='formulario_add' method="POST" role='form' action=''>
                 <div class="form-group mb-2 form-check-inline">
@@ -118,12 +122,12 @@
             </form>
         </div>
 
-
         <p id="add_alumno" class='mt-3'>Añadir alumno <button class="btn btn-primary" id='add' onclick="javascript:removeClass()">+</button></p>
 
 
     </main>
 
+    <!-- SCRIPT PARA ELIMINAR EL HISTORIAL DEL FORMULARIO -->
     <script>
         if (window.history.replaceState) { // verificamos disponibilidad
             window.history.replaceState(null, null, window.location.href);

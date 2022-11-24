@@ -6,10 +6,12 @@ define('DB_NAME', 'practica');
 
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
+// CREA LA BASE DE DATOS SI NO EXISTE
 $create_db = "CREATE DATABASE IF NOT EXISTS `practica`";
 if (mysqli_query($link, $create_db)) {
 }
 
+// LINK CON LA BASE DE DATOS
 $connect = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 if ($connect === false) {
@@ -54,7 +56,6 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
 
 
 //ACTUALIZAR ALUMNOS
-
 if (isset($_GET['objeto'])) {
     $objetoActualizar = $_GET['objeto'];
     $splitted = explode(",", $objetoActualizar);
