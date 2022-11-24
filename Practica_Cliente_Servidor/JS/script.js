@@ -41,8 +41,7 @@ document.querySelector('#table').addEventListener('keypress', function (e) {
             "telefono": array[3].innerHTML,
             "edad": array[4].innerHTML
         }
-        jQuery.get('config.php?objeto=' + objeto["id"] + "," + objeto["nombre"] + "," + objeto["apellidos"] + "," + objeto["telefono"] + "," + objeto["edad"] + "," , false, function (data) { console.log(data) });
+        jQuery.get('config.php?objeto=' + objeto["id"] + "," + objeto["nombre"] + "," + objeto["apellidos"] + "," + objeto["telefono"] + "," + objeto["edad"] + ",", false, function (data) { console.log(data) });
         location.reload();
     }
 });
-
