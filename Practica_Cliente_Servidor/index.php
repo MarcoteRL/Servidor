@@ -39,7 +39,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     <main>
         <div class="row">
             <div class="colm-logo">
-                <a href="index.php"><img src="img/cropped-Logo-una-tinta.png" alt="Logo"></a>
+                <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
             </div>
             <form action="" id="formulario" method="post">
                 <div class="colm-form">

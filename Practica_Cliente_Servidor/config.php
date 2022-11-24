@@ -23,6 +23,8 @@ $create_table_users = "CREATE TABLE IF NOT EXISTS `profesores` ( `id` INT PRIMAR
 
 $connect->query($create_table_users);
 
+
+//BORRADO DE ALUMNOS
 if (isset($_GET['value'])) {
     session_start();
     $BBDD = $_SESSION['POST'];
@@ -34,5 +36,20 @@ if (isset($_GET['value'])) {
         echo "Fino";
     } else {
         echo "No va";
-    };
-};
+    }
+}
+
+
+//AÑADIR ALUMNOS
+if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_POST['inputTelefono']) && isset($_POST['inputEdad'])) {
+    session_start();
+    $BBDD = $_SESSION['POST'];
+    $nombre = $_POST['inputNombre'];
+    $apellidos = $_POST['inputApellidos'];
+    $telefono = $_POST['inputTelefono'];
+    $edad = $_POST['inputEdad'];
+    $sql = "INSERT INTO  $BBDD (`Nombre`, `Apellidos`, `Telefono`, `Edad`) VALUES ('$nombre','$apellidos', '$telefono','$edad')";
+    if (mysqli_query($connect, $sql)) {
+    } else {
+    }
+}

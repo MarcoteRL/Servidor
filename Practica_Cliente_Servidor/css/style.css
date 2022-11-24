@@ -48,6 +48,10 @@ footer {
     max-width: 400px;
 }
 
+.colm-logo img:hover{
+    transform: scale(1.05);
+}
+
 .colm-logo h2 {
     font: 26px;
     font-weight: 400;

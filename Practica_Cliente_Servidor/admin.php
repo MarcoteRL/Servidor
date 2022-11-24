@@ -1,29 +1,3 @@
-<?php
-define('__ROOT__', dirname(dirname(__FILE__)));
-require_once(__ROOT__ . '\Practica_Cliente_Servidor\config.php');
-require_once(__ROOT__ . '\Practica_Cliente_Servidor\functions.php');
-
-if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_POST['inputTelefono']) && isset($_POST['inputEdad'])) {
-    echo "Hola";
-    session_start();
-    $BBDD = $_SESSION['POST'];
-    $nombre = $_POST['inputNombre'];
-    $apellidos = $_POST['inputApellidos'];
-    $telefono = $_POST['inputTelefono'];
-    $edad = $_POST['inputEdad'];
-    $sql = "INSERT INTO  $BBDD (`Nombre`, `Apellidos`, `Telefono`, `Edad`) VALUES ('$nombre','$apellidos', '$telefono','$edad')";
-    if (mysqli_query($connect, $sql)) {
-        echo "OK";
-    } else {
-        echo "NOT OK";
-    }
-    ;
-    mysqli_close($connect);
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -37,22 +11,25 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/styleAdmin.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="JS/script.js"></script>
+
 </head>
 
 <body>
     <header>
-        <a href="index.php"><img src="img/cropped-Logo-una-tinta.png" alt="Logo"></a>
+        <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
     </header>
 
     <main>
         <?php
-
-        session_start();
+        define('__ROOT__', dirname(dirname(__FILE__)));
+        require_once(__ROOT__ . '\Practica_Cliente_Servidor\config.php');
+        require_once(__ROOT__ . '\Practica_Cliente_Servidor\functions.php');
+        if (empty($_SESSION['POST'])) {
+            session_start();
+        }
         $user = $_SESSION['POST'];
         echo "<h2> Bienvenido <span id='nombreUsuario'>$user</span>!</h2>";
-
-        $sql = "SELECT * FROM $user";
+        $sql = "SELECT * FROM $user ORDER BY `id`";
         $result = mysqli_query($connect, $sql);
         if ($result) {
             $check = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -84,14 +61,15 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
                         $idAlumno = $value;
                         $contador++;
                     } else {
-                        echo "<td id=$contador>" . $value . "</td>";
+                        echo "<td id=$idAlumno>" . $value . "</td>";
                     }
                 }
-                echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($contador)'>Editar</button>" . "</td>";
+                echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
                 echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                 echo "</tr>";
 
                 while ($row = mysqli_fetch_assoc($result)) {
+                    $contador++;
                     echo "<tr>";
                     $id = $row['id'];
                     $nombre = $row['Nombre'];
@@ -100,14 +78,14 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
                     $edad = $row['Edad'];
                     $idAlumno = $id;
                     echo "<td class='$id'>" . $id . "</td>";
-                    echo "<td id=$contador>" . $nombre . "</td>";
-                    echo "<td id=$contador>" . $apellidos . "</td>";
-                    echo "<td id=$contador>" . $telefono . "</td>";
-                    echo "<td id=$contador>" . $edad . "</td>";
+                    echo "<td id=$id>" . $nombre . "</td>";
+                    echo "<td id=$id>" . $apellidos . "</td>";
+                    echo "<td id=$id>" . $telefono . "</td>";
+                    echo "<td id=$id>" . $edad . "</td>";
                     echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($contador)'>Editar</button>" . "</td>";
                     echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                     echo "</tr>";
-                    $contador++;
+
 
                 }
                 // while ($row = $result->fetch_assoc()) {
@@ -136,7 +114,7 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
         }
         ?>
         <div class="container justify-content-center">
-            <form class="form-inline d-none mt-3" id='formulario_add' method="POST" role='form' action='admin.php'>
+            <form class="form-inline mt-3" id='formulario_add' method="POST" role='form' action='admin.php'>
                 <div class="form-group mb-2 form-check-inline">
                     <label for="inputNombre" class="sr-only">Nombre</label>
                     <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder='Nombre'>
@@ -148,7 +126,8 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
                 </div>
                 <div class="form-group mb-2 form-check-inline">
                     <label for="inputTelefono" class="sr-only">Telefono</label>
-                    <input type="text" class="form-control" id="inputTelefono" name="inputEdad" placeholder='Telefono'>
+                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono"
+                        placeholder='Telefono'>
                 </div>
                 <div class="form-group mx-sm-3 mb-2 form-check-inline">
                     <label for="inputEdad" class="sr-only">Edad</label>
@@ -165,14 +144,8 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
 
     </main>
 
-    <h1>
-        <?php
-        if (isset($_POST['inputApellidos'])) {
 
-        }
-        ?>
-
-    </h1>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>
