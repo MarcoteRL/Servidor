@@ -41,10 +41,8 @@ document.querySelector('#table').addEventListener('keypress', function (e) {
             "telefono": array[3].innerHTML,
             "edad": array[4].innerHTML
         }
-        let json = JSON.stringify(objeto);
-        console.log(json);
-        jQuery.post("config.php",{obj:json});
+        jQuery.get('config.php?objeto=' + objeto["id"] + "," + objeto["nombre"] + "," + objeto["apellidos"] + "," + objeto["telefono"] + "," + objeto["edad"] + "," , false, function (data) { console.log(data) });
+        location.reload();
     }
-
 });
 

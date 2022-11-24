@@ -55,6 +55,18 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
 
 //ACTUALIZAR
 
-if (isset($_POST['obj'])) {
-    $objetoActualizar = $_POST['obj'];
+if (isset($_GET['objeto'])) {
+    $objetoActualizar = $_GET['objeto'];
+    $splitted = explode(",", $objetoActualizar);
+    $idActualizar = intval($splitted[0]);
+    $nombreActualizar = $splitted[1];
+    $apellidosActualizar = $splitted[2];
+    $telefonoActualizar = $splitted[3];
+    $edadActualizar = $splitted[4];
+    session_start();
+    $BBDD = $_SESSION['POST'];
+    $actualizarAlumno = "UPDATE $BBDD SET `Nombre`='$nombreActualizar',`Apellidos`='$apellidosActualizar',`Telefono`='$telefonoActualizar',`Edad`='$edadActualizar' WHERE `id` = $idActualizar";
+    if (mysqli_query($connect, $actualizarAlumno)) {
+    } else {
+    }
 }
