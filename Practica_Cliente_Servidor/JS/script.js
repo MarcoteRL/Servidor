@@ -23,6 +23,7 @@ function editarAlumno(id) {
     if (contador == 1) {
         let boton = document.querySelector("button[class=" + CSS.escape(id) + "]");
         document.querySelector("button[class=" + CSS.escape(id) + "]").innerHTML = "Guardar";
+        console.log(document.querySelector("button[class=" + CSS.escape(id) + "]").innerHTML)
         document.querySelector("button[class=" + CSS.escape(id) + "]").classList.remove('btn-primary');
         document.querySelector("button[class=" + CSS.escape(id) + "]").classList.add('btn-success');
     }
