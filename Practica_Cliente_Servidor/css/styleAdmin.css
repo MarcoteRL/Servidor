@@ -17,6 +17,12 @@ header {
     text-align: center;
 }
 
+.table{
+    border: 2px solid black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: large;
+}
+
 a {
     margin: 0 auto;
 }
@@ -37,4 +43,9 @@ main {
 
 #add{
     border-radius: 50%;
+}
+
+.table .btn{
+    border: 2px solid black;
+    margin:0
 }
