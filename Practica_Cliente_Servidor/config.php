@@ -28,14 +28,10 @@ $connect->query($create_table_users);
 if (isset($_GET['value'])) {
     session_start();
     $BBDD = $_SESSION['POST'];
-    echo "BBDD: " . $BBDD . "\n";
     $id = intval($_GET['value']);
-    echo "id: " . $id . "\n";
     $deleteAlumno = "DELETE FROM $BBDD WHERE `id` = $id ";
     if (mysqli_query($connect, $deleteAlumno)) {
-        echo "Fino";
     } else {
-        echo "No va";
     }
 }
 
@@ -50,6 +46,15 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
     $edad = $_POST['inputEdad'];
     $sql = "INSERT INTO  $BBDD (`Nombre`, `Apellidos`, `Telefono`, `Edad`) VALUES ('$nombre','$apellidos', '$telefono','$edad')";
     if (mysqli_query($connect, $sql)) {
+        unset($_POST);
+        unset($_COOKIE);
     } else {
     }
+}
+
+
+//ACTUALIZAR
+
+if (isset($_POST['obj'])) {
+    $objetoActualizar = $_POST['obj'];
 }

@@ -11,7 +11,7 @@
 
 header {
     height: 80px;
-    border-bottom: 3px solid rgb(0, 174, 255);
+    border-bottom: 3px solid #1a92e2;
     display: flex;
     align-items: center;
     text-align: center;
@@ -25,10 +25,6 @@ header {
 
 a {
     margin: 0 auto;
-}
-
-a img:hover {
-    transform: scale(1.2);
 }
 
 img {
@@ -53,9 +49,4 @@ main {
 .table .btn {
     border: 2px solid black;
     margin: 0
-}
-
-
-.btn:hover {
-    transform: scale(1.05);
 }

@@ -19,8 +19,8 @@ async function removeAlumno(id) {
 
 
 document.querySelector('#table').addEventListener('keypress', function (e) {
+    let array = [];
     if (e.key === 'Enter') {
-        console.log(e.target.id);
         let table = document.getElementById("table");
         let row = table.getElementsByTagName("tr");
         let col = null;
@@ -28,10 +28,23 @@ document.querySelector('#table').addEventListener('keypress', function (e) {
         for (let i = 0; i < row.length; i++) {
             col = row[i].getElementsByTagName("td");
             for (let j = 0; j < col.length; j++) {
-                console.log(col[j]);
                 col[j].contentEditable = false;
+                array.push(col[j]);
             }
         }
     }
+    if (array.length > 0) {
+        let objeto = {
+            "id": array[0].innerHTML,
+            "nombre": array[1].innerHTML,
+            "apellidos": array[2].innerHTML,
+            "telefono": array[3].innerHTML,
+            "edad": array[4].innerHTML
+        }
+        let json = JSON.stringify(objeto);
+        console.log(json);
+        jQuery.post("config.php",{obj:json});
+    }
+
 });
 

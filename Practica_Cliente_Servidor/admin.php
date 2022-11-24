@@ -82,27 +82,10 @@
                     echo "<td id=$id>" . $apellidos . "</td>";
                     echo "<td id=$id>" . $telefono . "</td>";
                     echo "<td id=$id>" . $edad . "</td>";
-                    echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($contador)'>Editar</button>" . "</td>";
+                    echo "<td>" . "<button type='button' class='btn btn-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($idAlumno)'>Editar</button>" . "</td>";
                     echo "<td>" . "<button type='button' class='btn btn-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
                     echo "</tr>";
-
-
                 }
-                // while ($row = $result->fetch_assoc()) {
-                //     echo "<tr>";
-                //     foreach ($row as $field => $value) {
-                //         if ($field == 'id') {
-                //             echo "id: " . $value;
-                //             $idAlumno = $value;
-                //             $contador++;
-                //             echo "<td class='$value'>" . $value . "</td>";
-                //         } else {
-                //             echo "<td id=$contador>" . $value . "</td>";
-                //         }
-                //     }
-                //     echo "<td class='col-3 col-sm-6'>" . "<button type='button' class='btn btn-outline-primary btn-responsive' contenteditable='false' id='editar_button' onclick='javascript:editarAlumno($contador)'>Editar</button><button type='button' class='btn btn-outline-danger btn-responsive' contenteditable='false' class='$idAlumno' onclick='removeAlumno($idAlumno)'>Eliminar</button>" . "</td>";
-                //     echo "</tr>";
-                // }
                 echo "</tbody>";
                 echo "</table>";
                 echo "</div>";
@@ -114,37 +97,38 @@
         }
         ?>
         <div class="container justify-content-center">
-            <form class="form-inline mt-3" id='formulario_add' method="POST" role='form' action='admin.php'>
+            <form class="form-inline d-none mt-3" id='formulario_add' method="POST" role='form' action=''>
                 <div class="form-group mb-2 form-check-inline">
                     <label for="inputNombre" class="sr-only">Nombre</label>
                     <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder='Nombre'>
                 </div>
                 <div class="form-group mb-2 form-check-inline">
                     <label for="inputApellidos" class="sr-only">Apellidos</label>
-                    <input type="text" class="form-control" id="inputApellidos" name="inputApellidos"
-                        placeholder='Apellidos'>
+                    <input type="text" class="form-control" id="inputApellidos" name="inputApellidos" placeholder='Apellidos'>
                 </div>
                 <div class="form-group mb-2 form-check-inline">
                     <label for="inputTelefono" class="sr-only">Telefono</label>
-                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono"
-                        placeholder='Telefono'>
+                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" placeholder='Telefono'>
                 </div>
                 <div class="form-group mx-sm-3 mb-2 form-check-inline">
                     <label for="inputEdad" class="sr-only">Edad</label>
-                    <input type="number" class="form-control" id="inputEdad" name="inputEdad" placeholder="Edad">
+                    <input type="text" class="form-control" id="inputEdad" name="inputEdad" placeholder="Edad">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Añadir</button>
             </form>
         </div>
 
 
-        <p id="add_alumno" class='mt-3'>Añadir alumno <button class="btn btn-primary" id='add'
-                onclick="javascript:removeClass()">+</button></p>
+        <p id="add_alumno" class='mt-3'>Añadir alumno <button class="btn btn-primary" id='add' onclick="javascript:removeClass()">+</button></p>
 
 
     </main>
 
-
+    <script>
+        if (window.history.replaceState) { // verificamos disponibilidad
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
     <script src="JS/script.js"></script>
 </body>
 
