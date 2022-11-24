@@ -53,7 +53,7 @@ if (isset($_POST['inputNombre']) && isset($_POST['inputApellidos']) && isset($_P
 }
 
 
-//ACTUALIZAR
+//ACTUALIZAR ALUMNOS
 
 if (isset($_GET['objeto'])) {
     $objetoActualizar = $_GET['objeto'];
