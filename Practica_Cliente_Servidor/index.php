@@ -1,8 +1,8 @@
 <?php
 
 define('__ROOT__', dirname(dirname(__FILE__)));
-require_once(__ROOT__.'\Practica_Cliente_Servidor\config.php');
-require_once(__ROOT__.'\Practica_Cliente_Servidor\functions.php');
+require_once(__ROOT__ . '\Practica_Cliente_Servidor\config.php');
+require_once(__ROOT__ . '\Practica_Cliente_Servidor\functions.php');
 
 
 if (isset($_POST['user']) && isset($_POST['password'])) {
@@ -53,7 +53,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
                     </div>
                 </div>
             </form>
-
         </div>
     </main>
 </body>
