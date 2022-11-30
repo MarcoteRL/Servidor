@@ -129,7 +129,7 @@
 
     <!-- SCRIPT PARA ELIMINAR EL HISTORIAL DEL FORMULARIO -->
     <script>
-        if (window.history.replaceState) { // verificamos disponibilidad
+        if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
     </script>

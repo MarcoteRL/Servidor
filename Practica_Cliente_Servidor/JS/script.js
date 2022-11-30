@@ -7,7 +7,11 @@ let idAlumno = 0;
  * Elimina la clase d-none que se utiliza para ocultar el formulario
  */
 function removeClass() {
-    document.getElementById('formulario_add').classList.remove('d-none');
+    if(document.getElementById('formulario_add').classList.contains('d-none')){
+        document.getElementById('formulario_add').classList.remove('d-none');
+    }else{
+        document.getElementById('formulario_add').classList.add('d-none');
+    }
 }
 
 
