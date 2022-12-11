@@ -34,18 +34,22 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula Estudio-Login or Sign up</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
 <body>
     <main>
         <div class="row">
-            <div class="colm-logo">
-                <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
-
+            <div class="colm-logo col-12 col-md-6 text-center mb-5">
+                <a href="index.php"><img src="img/logo.png" class="img-fluid" alt="Logo"></a>
             </div>
-            <form action="" id="formulario" method="post">
-                <div class="colm-form">
+            <form action="" id="formulario" class="col-12 col-md-6 text-center" method="post">
+                <div class="colm-form justify-content-center">
                     <div class="form-container">
                         <input type="text" id="user" placeholder="Usuario" name="user" required>
                         <input type="password" id="password" placeholder="Contraseña" name="password" required>
