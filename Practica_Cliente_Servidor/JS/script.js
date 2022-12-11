@@ -7,9 +7,9 @@ let idAlumno = 0;
  * Elimina la clase d-none que se utiliza para ocultar el formulario
  */
 function removeClass() {
-    if(document.getElementById('formulario_add').classList.contains('d-none')){
+    if (document.getElementById('formulario_add').classList.contains('d-none')) {
         document.getElementById('formulario_add').classList.remove('d-none');
-    }else{
+    } else {
         document.getElementById('formulario_add').classList.add('d-none');
     }
 }
@@ -25,7 +25,6 @@ function editarAlumno(id) {
     contador++;
     console.log({ contador })
     let element = document.querySelectorAll("[id=" + CSS.escape(id) + "]");
-    let td = document.querySelector("td[id=" + CSS.escape(id) + "]");
     for (let i = 0; i < element.length; i++) {
         if (element[i].tagName != 'BUTTON') {
             element[i].contentEditable = 'true';
@@ -46,7 +45,7 @@ function editarAlumno(id) {
 /**
  * Recorre la tabla y envía al PHP los elementos de la tabla que coincide con el ID del alumno, para que se actualicen los datos.
  */
-function actualizar() {
+async function actualizar() {
     let array = [];
     let table = document.getElementById("table");
     let row = table.getElementsByTagName("tr");
@@ -68,7 +67,7 @@ function actualizar() {
             "telefono": array[2].innerHTML,
             "edad": array[3].innerHTML
         }
-        jQuery.get('config.php?objeto=' + objeto["id"] + "," + objeto["nombre"] + "," + objeto["apellidos"] + "," + objeto["telefono"] + "," + objeto["edad"] + ",", false, function (data) { console.log(data) });
+        await jQuery.get('config.php?objeto=' + objeto["id"] + "," + objeto["nombre"] + "," + objeto["apellidos"] + "," + objeto["telefono"] + "," + objeto["edad"] + ",", false, function (data) { console.log(data) });
         location.reload();
     }
 }
