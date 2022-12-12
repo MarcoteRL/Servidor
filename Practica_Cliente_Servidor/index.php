@@ -42,7 +42,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
 <body>
     <main>
         <div class="row">
-            <div class="colm-logo col-12 col-md-6 text-center mb-5">
+            <div class="colm-logo col-12 col-md-6 text-center">
                 <a href="index.php"><img src="img/logo.png" class="img-fluid" alt="Logo"></a>
             </div>
             <form action="" id="formulario" class="col-12 col-md-6" method="post">
