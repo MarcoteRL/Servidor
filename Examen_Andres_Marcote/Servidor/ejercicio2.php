@@ -10,8 +10,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $resultadoLogin = "Usuario logueado correctamente!";
 }
 
-<<<<<<< HEAD
-=======
 // if (isset($_POST['mostrarUsuario'])) {
 //     if (isset($_SESSION['user'])) {
 //         $resultado = $_COOKIE["Usuario"];
@@ -28,7 +26,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
 //     }
 // }
 
->>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
 if (isset($_POST['borrar'])) {
     unset($_COOKIE['Password']);
     setcookie('Password', '', time() - 3600);
