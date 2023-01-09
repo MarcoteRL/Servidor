@@ -19,6 +19,7 @@ if ($connect === false) {
 }
 
 
+<<<<<<< HEAD
 //CREAR TABLA EMPLEADOS
 $create_table_users = "CREATE TABLE IF NOT EXISTS `empleados` ( `DNI` varchar(9) PRIMARY KEY NOT NULL,
 `nombre` varchar(50) NOT NULL, `apellidos` varchar(50) NOT NULL, `fecha_nacimiento` date NOT NULL)";
@@ -60,3 +61,10 @@ if (isset($_POST['editarNombre']) && isset($_POST['editarApellidos']) && isset($
     } else {
     }
 }
+=======
+//CREAR TABLA profesores
+$create_table_users = "CREATE TABLE IF NOT EXISTS `empleados` ( `DNI` varchar(9) PRIMARY KEY NOT NULL,
+`nombre` varchar(50) NOT NULL, `apellidos` varchar(50) NOT NULL, `fecha_nacimiento` date NOT NULL)";
+
+$connect->query($create_table_users);
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495

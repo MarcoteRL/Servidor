@@ -1,7 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 //Si las variables usuario y contraseña existen crea las cookies y guarda las variables dentro. Finalmente muestra que el
 //se ha logueado correctamente.
+=======
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $user = $_POST['user'];
     $password = $_POST['password'];
@@ -10,7 +13,10 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $resultadoLogin = "Usuario logueado correctamente!";
 }
 
+<<<<<<< HEAD
 //Si se ha pulsado al boton de mostrar cookies usuario, comprueba que el usuario se ha introducido y si existe muestra las cookies
+=======
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
 if (isset($_POST['mostrarUsuario'])) {
     if (isset($_COOKIE["Usuario"])) {
         $resultado = $_COOKIE["Usuario"];
@@ -19,7 +25,10 @@ if (isset($_POST['mostrarUsuario'])) {
     }
 }
 
+<<<<<<< HEAD
 // Si se ha pulsado al boton de mostrar cookies contraseña, comprueba que las contraseña se ha introducido y si existe muestra las cookies
+=======
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
 if (isset($_POST['mostrarPassword'])) {
     if (isset($_COOKIE["Password"])) {
         $resultadoPass = $_COOKIE["Password"];
@@ -28,7 +37,10 @@ if (isset($_POST['mostrarPassword'])) {
     }
 }
 
+<<<<<<< HEAD
 //Si se ha pulsado al boton de borrar y las cookies de usuario y password existen las borrar, si no existe, muestra "No hay cookies".
+=======
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
 if (isset($_POST['borrar'])) {
     unset($_COOKIE['Password']);
     setcookie('Password', '', time() - 3600);
@@ -59,8 +71,11 @@ if (isset($_POST['borrar'])) {
 </head>
 
 <body>
+<<<<<<< HEAD
 
 <h1>Usando cookies</h1>
+=======
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
     <form id="formulario" method="post">
         <div class="row">
             <div class="col-2">

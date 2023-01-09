@@ -10,6 +10,25 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $resultadoLogin = "Usuario logueado correctamente!";
 }
 
+<<<<<<< HEAD
+=======
+// if (isset($_POST['mostrarUsuario'])) {
+//     if (isset($_SESSION['user'])) {
+//         $resultado = $_COOKIE["Usuario"];
+//     } else {
+//         $resultado = "No hay cookies!";
+//     }
+// }
+
+// if (isset($_POST['mostrarPassword'])) {
+//     if (isset($_SESSION["pass"])) {
+//         $resultadoPass = $_SESSION["pass"];
+//     } else {
+//         $resultadoPass = "No hay cookies!";
+//     }
+// }
+
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
 if (isset($_POST['borrar'])) {
     unset($_COOKIE['Password']);
     setcookie('Password', '', time() - 3600);
@@ -40,7 +59,10 @@ if (isset($_POST['borrar'])) {
 </head>
 
 <body>
+<<<<<<< HEAD
 <h1>Usando session</h1>
+=======
+>>>>>>> 039daf822fd1e93d7ac1fca133f6866658a9c495
     <form id="formulario" method="post">
         <div class="row">
             <div class="col-2">
